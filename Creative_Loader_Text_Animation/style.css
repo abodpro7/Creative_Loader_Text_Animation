@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #121f21;
+}
+.loader {
+    position: relative;
+    font-size: 12vw;
+    font-family: sans-serif;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 0.1vw rgba(255, 255, 255, 0.4);
+}
+.loader::before {
+    position: absolute;
+    content: attr(anim-text);
+    height: 100%;
+    width: 0;
+    color: #fff;
+    border-right: 2px solid #fff;
+    -webkit-text-stroke: 0.2vw #fff;
+    overflow: hidden;
+    animation: animate 7s linear infinite;
+}
+@keyframes animate {
+    80%{
+        width: 100%;
+    }
+}
